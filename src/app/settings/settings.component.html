@@ -1,0 +1,45 @@
+<div class="container">
+    <div class="grid">
+        <div class="row">
+            <div class="col">
+
+                <form #myForm="ngForm" novalidate>
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title"> Farve-tema :</h5>
+                            <div>
+                                <label for="light"><input id="light" type="radio" value="light" name="theme"
+                                        [(ngModel)]="theme" required> Lyst</label>
+                            </div>
+
+                            <div>
+                                <label for="dark"><input id="dark" type="radio" value="dark" name="theme"
+                                        [(ngModel)]="theme" required> Mørkt</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card top-margin-8">
+                        <div class="card-body">
+                            <h5 class="card-title"> Felt-størrelse :</h5>
+                            <div>
+                                <label for="large"><input id="large" type="radio" value="large" name="tilesize"
+                                        [(ngModel)]="tilesize" required> Stor</label>
+                            </div>
+
+                            <div>
+                                <label for="small"><input id="small" type="radio" value="small" name="tilesize"
+                                        [(ngModel)]="tilesize" required> Lille</label>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="row top-margin-8">
+            <div class="col">
+                <button (click)="saveSettings()" type="button" class="btn btn-success">Gem</button>
+                <button [routerLink]="'/board'" type="button" class="btn btn-secondary left-margin-8">Fortryd</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,17 @@
+.board {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+}
+
+.game {
+  border: 12px solid grey;
+  padding-top: 6px;
+  padding-right: 6px;
+}
+
+.container {
+  margin-top: 100px;
+}

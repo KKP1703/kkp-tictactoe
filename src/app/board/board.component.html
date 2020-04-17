@@ -1,0 +1,56 @@
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <div class="board">
+                <div class="tile-container game" [ngStyle]="{'max-width' : tileSize * 3}">
+
+                    <app-tile [state]="tiles[0][0]" [tileSize]="tileSize" (click)="tileChanged(0,0)">
+                    </app-tile>
+                    <app-tile [state]="tiles[0][1]" [tileSize]="tileSize" (click)="tileChanged(0,1)">
+                    </app-tile>
+                    <app-tile [state]="tiles[0][2]" [tileSize]="tileSize" (click)="tileChanged(0,2)">
+                    </app-tile><br>
+                    <app-tile [state]="tiles[1][0]" [tileSize]="tileSize" (click)="tileChanged(1,0)">
+                    </app-tile>
+                    <app-tile [state]="tiles[1][1]" [tileSize]="tileSize" (click)="tileChanged(1,1)">
+                    </app-tile>
+                    <app-tile [state]="tiles[1][2]" [tileSize]="tileSize" (click)="tileChanged(1,2)">
+                    </app-tile><br>
+                    <app-tile [state]="tiles[2][0]" [tileSize]="tileSize" (click)="tileChanged(2,0)">
+                    </app-tile>
+                    <app-tile [state]="tiles[2][1]" [tileSize]="tileSize" (click)="tileChanged(2,1)">
+                    </app-tile>
+                    <app-tile [state]="tiles[2][2]" [tileSize]="tileSize" (click)="tileChanged(2,2)">
+                    </app-tile>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row" style="min-height: 50px;">
+        <div class="col" *ngIf="draw">
+            <div class="board">
+                Spillet endte uafgjort
+            </div>
+        </div>
+        <div class="col" *ngIf="winner">
+            <div class="board">
+                {{winner ==='o' ? "Computeren" : "Du"}} vandt
+            </div>
+        </div>
+    </div>
+    <div class="row" style="min-height: 50px;">
+        <div class="col" *ngIf="winner || draw">
+            <div class="board">
+                <button (click)="playAgain()" type="button" class="btn btn-primary">Spil igen</button>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="board">
+                <button [routerLink]="'/settings'" type="button" class="btn btn-secondary">Indstillinger</button>
+            </div>
+        </div>
+    </div>
+</div>
